@@ -133,7 +133,3 @@ Não é necessário iniciar manualmente o servidor para executar os testes.
 
 > Observação: UDP não estabelece conexão e não garante, por si só, entrega, ordenação ou ausência de duplicatas. O cliente inclui identificador de requisição, tempo limite e retransmissões para lidar com perdas simples. Em uma aplicação real, retransmissões também exigiriam controle de duplicidade no servidor para evitar executar novamente operações que não sejam idempotentes. Esta implementação é didática e não deve ser exposta diretamente à internet.
 
-## 8. Relação com o conteúdo da aula
-
-A solução segue o modelo cliente-servidor e o protocolo Requisição-Resposta descritos nos slides. As primitivas de middleware são construídas sobre `sendto()` e `recvfrom()` dos sockets UDP. Os argumentos e resultados são serializados em bytes (JSON em UTF-8) antes da transmissão, desempenhando o papel de empacotamento e desempacotamento mencionado no material.
-
